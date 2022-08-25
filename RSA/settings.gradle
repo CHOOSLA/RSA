@@ -1,0 +1,26 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+        jcenter()
+
+        // 추가된 것
+        // CalendarView 를 쓰기 위한 것
+        maven { url "https://jitpack.io" }
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        jcenter()
+        // 추가된 것
+        // CalendarView 를 쓰기 위한 것
+        maven { url "https://jitpack.io" }
+    }
+}
+rootProject.name = "RSA"
+include ':app'
+include ':sdk'

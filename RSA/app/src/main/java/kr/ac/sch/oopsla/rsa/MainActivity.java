@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity{
         });
 
         mViewBtn.setOnClickListener((v)->{
-            Intent intent = new Intent(MainActivity.this,ViewActivity.class);
+            Intent intent = new Intent(MainActivity.this,ViewSelectActivity.class);
             startActivity(intent);
         });
 

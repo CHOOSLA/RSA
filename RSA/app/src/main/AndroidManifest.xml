@@ -56,6 +56,23 @@
             android:label="ResultGraphActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".ViewSelectActivity"
+            android:label="ViewSelectActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ViewListActivity"
+            android:label="ViewListActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ViewResultActivity"
+            android:label="ViewResultActivity"
+            android:screenOrientation="portrait" />
+
+
+
     </application>
 
 </manifest>

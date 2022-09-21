@@ -8,8 +8,16 @@
     android:background="@color/fst_background"
     android:orientation="vertical"
     android:gravity="center">
+    <TextView
+        android:id="@+id/main"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Main Menu"
+        android:textColor="#ffffff"
+        android:textSize="40dp" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/main_image"
         android:layout_width="80dp"
         android:layout_height="80dp"
@@ -17,18 +25,18 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/main_image" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_rsa"
-        android:text="측정"
+        android:text="Record"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:background="@color/fst_menu"
         android:textColor="#FFFFFF" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_view"
-        android:text="히스토리"
+        android:text="View &amp; Send"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"

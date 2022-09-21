@@ -10,7 +10,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="40dp"
-        android:text="RESULT"/>
+        android:text="RESULT"
+        android:textColor="#ffffff"/>
     <Space
         android:layout_width="wrap_content"
         android:layout_height="30dp"/>
@@ -28,7 +29,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/box">
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -37,7 +39,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:gravity="center">
+                android:gravity="center"
+                >
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -106,18 +109,22 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center">
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_result_save"
             android:layout_width="100dp"
             android:layout_height="50dp"
+            android:background="@drawable/blue_rec_style"
+            android:textColor="#FFFFFF"
             android:text="SAVE"/>
         <Space
             android:layout_width="10dp"
             android:layout_height="0dp"/>
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_result_back"
             android:layout_width="100dp"
             android:layout_height="50dp"
+            android:background="@drawable/blue_rec_style"
+            android:textColor="#FFFFFF"
             android:text="BACK"/>
     </LinearLayout>
 

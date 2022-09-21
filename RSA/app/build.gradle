@@ -46,4 +46,9 @@ dependencies {
     // 추가된 것
     // CalendarView 를 쓰기 위한 것
     implementation 'com.github.applikeysolutions:cosmocalendar:1.0.3'
+
+    // 추가된 것
+    // SlyCalendar 라이브러리
+    // https://github.com/psinetron/slycalendarview
+    implementation 'com.github.psinetron:slycalendarview:0.0.9'
 }

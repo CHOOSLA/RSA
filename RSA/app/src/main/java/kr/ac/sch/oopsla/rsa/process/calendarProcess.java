@@ -39,7 +39,9 @@ public class calendarProcess {
 	    }
 	    else if(flag == 2){
 	    	cal.add(Calendar.MONTH, -subday);
-	    }
+	    }else if(flag== 3){
+			cal.add(Calendar.YEAR,-subday);
+		}
 	    
 	    String s = calendarProcess.longToString(cal.getTimeInMillis());	  
 		

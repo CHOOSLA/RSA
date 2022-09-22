@@ -221,6 +221,10 @@ public class CustomGraphView2 extends ImageView{
 
 	   }
 	   
+	   /*
+	   // 2022-09-23 일 수정
+	   // 이거 땜에 View & Send에서 필요없는 메시지가 뜸
+	   // 왜 필요한지 몰라서 주석 처리함
 	   //On Draw for message
 	   messageFlicker++;
 	   if(messageFlicker >= 2000000000)
@@ -231,6 +235,8 @@ public class CustomGraphView2 extends ImageView{
 	   {
 		   canvas.drawBitmap(detection, null, rect_set_message, null);
 	   }
+	   
+	    */
 	   
       //invalidate();  // Force a re-draw on each frame!!!!! IMPORTANT!!!
    }

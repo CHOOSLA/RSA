@@ -26,7 +26,8 @@
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:layout_margin="10dp"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textColor="#ffffff"/>
 
         <TextView
             android:id="@+id/textView3"
@@ -34,7 +35,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:textSize="20dp"
-            android:text="~" />
+            android:text="~"
+            android:textColor="#ffffff"/>
 
         <TextView
             android:id="@+id/text_result_list_end"
@@ -42,7 +44,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:textSize="20dp"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textColor="#ffffff"/>
 
     </LinearLayout>
 
@@ -64,6 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Select ALL"
+            android:textColor="#ffffff"
             />
 
     </LinearLayout>

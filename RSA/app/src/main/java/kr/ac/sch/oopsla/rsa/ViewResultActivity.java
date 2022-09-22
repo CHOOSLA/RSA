@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -39,6 +40,9 @@ public class ViewResultActivity extends Activity implements View.OnClickListener
 
     private Button btnLeft;
     private Button btnRight;
+
+    private LinearLayout lnrLeft;
+    private LinearLayout lnrRight;
 
     private SharedData sharedData = new SharedData();
     private SharedPreferences sd;
@@ -89,7 +93,6 @@ public class ViewResultActivity extends Activity implements View.OnClickListener
         day_titleTxt = (TextView) findViewById(R.id.text_view_result_period);
         day_titleTxt.setText(first_day);
 
-        timeTxt = (TextView) findViewById(R.id.text_view_result_time);
 
         btnSave = (Button) findViewById(R.id.button_view_result_save);
         btnSave.setOnClickListener(this);
@@ -104,6 +107,11 @@ public class ViewResultActivity extends Activity implements View.OnClickListener
         btnRight = (Button) findViewById(R.id.button_view_result_right);
         btnRight.setOnClickListener(this);
 
+        lnrLeft = (LinearLayout) findViewById(R.id.layout_view_result_left);
+        lnrLeft.setOnClickListener(this);
+
+        lnrRight = (LinearLayout) findViewById(R.id.layout_view_result_right);
+        lnrRight.setOnClickListener(this);
 
         tv1 = (TextView) findViewById(R.id.text_view_result_heart); // hr
         tv2 = (TextView) findViewById(R.id.text_view_result_rsa); // rsa
@@ -113,7 +121,7 @@ public class ViewResultActivity extends Activity implements View.OnClickListener
         heartGraph.DetectMessage(true);
 
         rsaText = (TextView) findViewById(R.id.text_view_result_status);
-        rsaImage = (ImageView)findViewById(R.id.image_view_result_image);
+        rsaImage = (ImageView) findViewById(R.id.image_view_result_image);
 
         initMax();
         SeeText(count);
@@ -177,42 +185,42 @@ public class ViewResultActivity extends Activity implements View.OnClickListener
         int leftStart, rightStart;
         String[] tmpstr;
 
+        day_titleTxt.setText(mArrayDateList.get(i));
+
         tmpstr = HrArrays.get(i).split(",");
         HR_fin = new double[tmpstr.length];
-        for(int j=0;j<tmpstr.length;j++){
+        for (int j = 0; j < tmpstr.length; j++) {
             HR_fin[j] = Double.parseDouble(tmpstr[j]);
         }
 
         tmpstr = UpPeaks.get(i).split(",");
         up = new double[tmpstr.length];
-        for(int j=0;j<tmpstr.length;j++){
+        for (int j = 0; j < tmpstr.length; j++) {
             up[j] = Double.parseDouble(tmpstr[j]);
         }
 
         tmpstr = DwPeaks.get(i).split(",");
         dw = new double[tmpstr.length];
-        for(int j=0;j<tmpstr.length;j++){
+        for (int j = 0; j < tmpstr.length; j++) {
             dw[j] = Double.parseDouble(tmpstr[j]);
         }
 
         heartGraph.addArr(HR_fin, up, dw, Rights.get(i), Lefts.get(i)); // graph reversal
 
         tv1.setText(AvgHRs.get(i) + "");
-        tv2.setText(Math.round(RSAs.get(i)*100)/100.0 + "");
+        tv2.setText(Math.round(RSAs.get(i) * 100) / 100.0 + "");
         tv4.setText(mnameArrayList.get(i));
 
         rsastats = evalRsa(RSAs.get(i), Ages.get(i));
 
-        String textTmp ="";
-        if(rsastats == -1){
+        String textTmp = "";
+        if (rsastats == -1) {
             textTmp += "Not measurable\r\n";
             rsaImage.setImageResource(R.drawable.muted);
-        }
-        else if(rsastats == 0){
+        } else if (rsastats == 0) {
             textTmp += "Abnormal\r\n";
             rsaImage.setImageResource(R.drawable.abnormall);
-        }
-        else if(rsastats == 1){
+        } else if (rsastats == 1) {
             textTmp += "Normal\r\n";
             rsaImage.setImageResource(R.drawable.normall);
         }
@@ -226,21 +234,17 @@ public class ViewResultActivity extends Activity implements View.OnClickListener
         int id = v.getId();
         if (id == R.id.button_view_result_save) {
             finish();
-        }
-        else if (id == R.id.button_view_result_back) {
+        } else if (id == R.id.button_view_result_back) {
             finish();
-        }
-        else if (id == R.id.button_view_result_left) {
+        } else if (id == R.id.layout_view_result_left ||id == R.id.button_view_result_left ) {
             if (count < 1) {
                 count = 0;
                 SeeText(count);
             } else {
                 count--;
                 SeeText(count);
-
             }
-        }
-        else if (id == R.id.button_view_result_right) {
+        } else if (id == R.id.layout_view_result_right ||id == R.id.button_view_result_right ) {
 
             if (count < max - 1) {
                 count++;
@@ -250,54 +254,55 @@ public class ViewResultActivity extends Activity implements View.OnClickListener
             }
 
         }
+
+        if (count == 0) {
+            btnLeft.setBackgroundResource(R.drawable.left_arrow_gray);
+        } else {
+            btnLeft.setBackgroundResource(R.drawable.left_arrow);
+        }
+
+        if (count == max - 1) {
+            btnRight.setBackgroundResource(R.drawable.right_arrow_gray);
+        } else {
+            btnRight.setBackgroundResource(R.drawable.right_arrow);
+        }
     }
 
-    public double evalRsa(double rsa, double age){
+    public double evalRsa(double rsa, double age) {
         double stats = 0; // -1 = 측정 불가 나이, 1 = 정상, 0 = 비정상
-        if(age <= 9){
+        if (age <= 9) {
             stats = -1;
-        }
-        else if(age <=29 && age >= 10){
-            if(rsa>=14){
+        } else if (age <= 29 && age >= 10) {
+            if (rsa >= 14) {
                 stats = 1;
-            }
-            else{
+            } else {
                 stats = 0;
             }
-        }
-        else if(age <=39 && age >= 30){
-            if(rsa>=12){
+        } else if (age <= 39 && age >= 30) {
+            if (rsa >= 12) {
                 stats = 1;
-            }
-            else{
+            } else {
                 stats = 0;
             }
-        }
-        else if(age <=49 && age >= 40){
-            if(rsa>=10){
+        } else if (age <= 49 && age >= 40) {
+            if (rsa >= 10) {
                 stats = 1;
-            }
-            else{
+            } else {
                 stats = 0;
             }
-        }
-        else if(age <=59 && age >= 50){
-            if(rsa>=9){
+        } else if (age <= 59 && age >= 50) {
+            if (rsa >= 9) {
                 stats = 1;
-            }
-            else{
+            } else {
                 stats = 0;
             }
-        }
-        else if(age <= 69&& age >= 60){
-            if(rsa>=7){
+        } else if (age <= 69 && age >= 60) {
+            if (rsa >= 7) {
                 stats = 1;
-            }
-            else{
+            } else {
                 stats = 0;
             }
-        }
-        else{
+        } else {
             stats = -1;
         }
         return stats;

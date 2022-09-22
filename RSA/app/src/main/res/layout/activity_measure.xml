@@ -23,6 +23,7 @@
             android:layout_height="wrap_content"
             android:text="RSA"
             android:textSize="40dp"
+            android:textColor="#ffffff"
             />
         <Space
             android:layout_width="wrap_content"
@@ -70,19 +71,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button_start"
                 android:text="Start"
                 android:layout_width="100dp"
-                android:layout_height="50dp"/>
+                android:layout_height="50dp"
+                android:background="@drawable/blue_rec_style"
+                android:textColor="#ffffff"/>
             <Space
                 android:layout_width="20dp"
                 android:layout_height="wrap_content"/>
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button_stop"
                 android:text="Stop"
                 android:layout_width="100dp"
-                android:layout_height="50dp"/>
+                android:layout_height="50dp"
+                android:background="@drawable/blue_rec_style"
+                android:textColor="#ffffff"/>
 
 
         </LinearLayout>

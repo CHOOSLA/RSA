@@ -49,6 +49,13 @@ dependencies {
 
     // 추가된 것
     // SlyCalendar 라이브러리
+    // ViewDateActivity 에서 쓰임
     // https://github.com/psinetron/slycalendarview
     implementation 'com.github.psinetron:slycalendarview:0.0.9'
+
+    // 추가된 것
+    // AnyChart 라이브러리
+    // ViewTrendActivity 에서 쓰임
+    // https://github.com/AnyChart/AnyChart-Android
+    implementation 'com.github.AnyChart:AnyChart-Android:1.1.2'
 }

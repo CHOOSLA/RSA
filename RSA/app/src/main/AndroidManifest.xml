@@ -57,7 +57,7 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".ViewSelectActivity"
+            android:name=".ViewDateActivity"
             android:label="ViewSelectActivity"
             android:screenOrientation="portrait" />
 
@@ -67,9 +67,25 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".ViewResultActivity"
+            android:name=".ViewIndividualActivity"
             android:label="ViewResultActivity"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ViewSelectTypeActivity"
+            android:label="ViewSelectTypeActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ViewTrendActivity"
+            android:label="ViewTrendActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ProfileActivity"
+            android:label="ProfileActivity"
+            android:screenOrientation="portrait" />
+
 
 
 

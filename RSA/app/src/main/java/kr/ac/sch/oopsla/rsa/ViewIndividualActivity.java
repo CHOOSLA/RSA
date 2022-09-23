@@ -17,7 +17,7 @@ import kr.ac.sch.oopsla.rsa.db.DBtype;
 import kr.ac.sch.oopsla.rsa.process.CustomGraphView2;
 import kr.ac.sch.oopsla.rsa.process.SharedData;
 
-public class ViewResultActivity extends Activity implements View.OnClickListener {
+public class ViewIndividualActivity extends Activity implements View.OnClickListener {
     private TextView day_titleTxt;
     private TextView timeTxt;
     private TextView symp_evaluation;
@@ -77,7 +77,7 @@ public class ViewResultActivity extends Activity implements View.OnClickListener
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_result);
+        setContentView(R.layout.activity_view_individual);
 
         sharedLoad();
 
@@ -133,7 +133,7 @@ public class ViewResultActivity extends Activity implements View.OnClickListener
         String hrarr, uppeak, dwpeak;
         double rsa;
 
-        db = new DBtype(ViewResultActivity.this);
+        db = new DBtype(ViewIndividualActivity.this);
 
         for (int i = 0; i < mArrayList.size(); i++) {
             String date = mArrayList.get(i).substring(0, 10);

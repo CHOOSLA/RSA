@@ -94,8 +94,10 @@ public class ViewListActivity extends Activity implements View.OnClickListener {
                     }
 
 
-                    Intent intent1 = new Intent(ViewListActivity.this,ViewResultActivity.class);
+                    Intent intent1 = new Intent(ViewListActivity.this, ViewSelectTypeActivity.class);
                     intent1.putExtra("Date", mCheckArrayList);
+                    intent1.putExtra("startDay", startDay);
+                    intent1.putExtra("endDay",endDay);
                     startActivity(intent1);
 
                 }

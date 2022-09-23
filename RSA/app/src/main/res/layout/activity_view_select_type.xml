@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fst_background"
+    android:orientation="vertical"
+   >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="View &amp; Send"
+            android:textColor="@color/white"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/text_view_select_type_period"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Day ~ Day"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:layout_marginTop="30dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:orientation="horizontal" >
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_view_select_type_individual"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/green_rec_style"
+                android:text="Individual\nView"
+                android:textColor="@color/white"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_view_select_type_trend"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:background="@drawable/green_rec_style"
+                android:text="Trend\nView"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_view_select_type_back"
+            android:layout_width="110dp"
+            android:layout_height="40dp"
+            android:background="@drawable/blue_rec_style"
+            android:text="Back"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

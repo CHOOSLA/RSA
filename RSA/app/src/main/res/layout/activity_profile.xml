@@ -1,0 +1,952 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fst_background"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="Profile"
+        android:textColor="#ffffff"
+        android:textSize="30dp" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:text="Personal Info"
+                android:textColor="#ffffff"
+                android:textSize="20dp" />
+
+            <TableLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#dbeef4"
+                android:gravity="center" >
+
+                <TableRow
+                    android:id="@+id/tableRow1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" >
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="FirstName"
+                        android:textColor="#e46ca0" />
+
+                    <EditText
+                        android:id="@+id/pmpfn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="1"
+                        android:lines="1"
+                        android:maxEms="8"
+                        android:maxLength="10"
+                        android:minEms="5"
+                        android:singleLine="true"
+                        android:textColor="#000000" >
+
+                        <requestFocus
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </EditText>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" >
+
+                    <TextView
+                        android:id="@+id/textMidname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MidName"
+                        android:textColor="#e46ca0" />
+
+                    <EditText
+                        android:id="@+id/pmpmn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="1"
+                        android:lines="1"
+                        android:maxEms="8"
+                        android:maxLength="10"
+                        android:minEms="5"
+                        android:singleLine="true"
+                        android:textColor="#000000" >
+
+                        <requestFocus
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </EditText>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow_lastname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" >
+
+                    <TextView
+                        android:id="@+id/textlastname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="LastName"
+                        android:textColor="#e46ca0" />
+
+                    <EditText
+                        android:id="@+id/pmpln"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="1"
+                        android:lines="1"
+                        android:maxEms="8"
+                        android:maxLength="10"
+                        android:minEms="5"
+                        android:singleLine="true"
+                        android:textColor="#000000" >
+
+                        <requestFocus
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </EditText>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow_birthday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" >
+
+                    <TextView
+                        android:id="@+id/Textbirth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BirthDay"
+                        android:textColor="#e46ca0" />
+
+                    <EditText
+                        android:id="@+id/pmpbd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="1"
+                        android:lines="1"
+                        android:maxEms="8"
+                        android:maxLength="10"
+                        android:minEms="5"
+                        android:singleLine="true"
+                        android:textColor="#000000" >
+
+                        <requestFocus
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </EditText>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow_age"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" >
+
+                    <TextView
+                        android:id="@+id/Textage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Age"
+                        android:textColor="#e46ca0" />
+
+                    <EditText
+                        android:id="@+id/Edit_age"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="1"
+                        android:lines="1"
+                        android:maxEms="8"
+                        android:maxLength="10"
+                        android:minEms="5"
+                        android:singleLine="true"
+                        android:textColor="#000000" >
+
+                        <requestFocus
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </EditText>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow_gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" >
+
+                    <TextView
+                        android:id="@+id/TextView_gender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|left"
+                        android:text="Gender"
+                        android:textColor="#e46ca0" />
+
+                    <RadioGroup
+                        android:id="@+id/pmgender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            android:id="@+id/pmmale"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="M"
+                            android:textColor="#000000" />
+
+                        <RadioButton
+                            android:id="@+id/pmfemale"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="F"
+                            android:textColor="#000000" />
+                    </RadioGroup>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow_position"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" >
+
+                    <TextView
+                        android:id="@+id/TextView_position"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|left"
+                        android:text="Position"
+                        android:textColor="#e46ca0" />
+
+                    <RadioGroup
+                        android:id="@+id/pmposition"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+
+                        <RadioButton
+                            android:id="@+id/pmupright"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="Upright"
+                            android:textColor="#000000" />
+
+                        <RadioButton
+                            android:id="@+id/pmsupine"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Supine"
+                            android:textColor="#000000" />
+                    </RadioGroup>
+                </TableRow>
+
+
+                <TableRow
+                    android:id="@+id/tableRow_exercise"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" >
+
+                    <TextView
+                        android:id="@+id/TextView_Exer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|left"
+                        android:text="exercise"
+                        android:textColor="#e46ca0" />
+
+                    <RadioGroup
+                        android:id="@+id/pmexercise"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+
+                        <RadioButton
+                            android:id="@+id/pmYes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="Yes"
+                            android:textColor="#000000" />
+
+                        <RadioButton
+                            android:id="@+id/pmNo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="No"
+                            android:textColor="#000000" />
+                    </RadioGroup>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" >
+
+                    <TextView
+                        android:id="@+id/TextView04"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Phone"
+                        android:textColor="#e46ca0" />
+
+                    <EditText
+                        android:id="@+id/pmpstate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="1"
+                        android:lines="1"
+                        android:maxEms="8"
+                        android:maxLength="2"
+                        android:minEms="5"
+                        android:singleLine="true"
+                        android:text="State"
+                        android:textColor="#000000" />
+
+                    <EditText
+                        android:id="@+id/pmparea"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="1"
+                        android:lines="1"
+                        android:maxEms="8"
+                        android:maxLength="2"
+                        android:minEms="5"
+                        android:singleLine="true"
+                        android:text="Area"
+                        android:textColor="#000000" />
+
+                    <EditText
+                        android:id="@+id/pmpfirst"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="1"
+                        android:lines="1"
+                        android:maxEms="8"
+                        android:maxLength="4"
+                        android:minEms="5"
+                        android:singleLine="true"
+                        android:text="Fst"
+                        android:textColor="#000000" />
+
+                    <EditText
+                        android:id="@+id/pmplast"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="1"
+                        android:lines="1"
+                        android:maxEms="8"
+                        android:maxLength="4"
+                        android:minEms="5"
+                        android:singleLine="true"
+                        android:text="lst"
+                        android:textColor="#000000" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" >
+
+                    <TextView
+                        android:id="@+id/Textemail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email"
+                        android:textColor="#e46ca0" />
+
+                    <EditText
+                        android:id="@+id/pmpemail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:textColor="#000000" />
+
+                    <TextView
+                        android:id="@+id/section"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+
+                    <EditText
+                        android:id="@+id/pmplstemail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="1"
+                        android:lines="1"
+                        android:maxEms="8"
+                        android:minEms="5"
+                        android:singleLine="true"
+                        android:textColor="#000000" />
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/textView1313"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:text="Physician Info"
+                android:textColor="#ffffff"
+                android:textSize="20dp" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#dbeef4"
+                android:gravity="center" >
+
+                <TableRow
+                    android:id="@+id/tableRow_physician"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" >
+
+                    <TextView
+                        android:id="@+id/dtextView_first"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="FirstName"
+                        android:textColor="#e46ca0" />
+
+                    <EditText
+                        android:id="@+id/pmdfn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="1"
+                        android:lines="1"
+                        android:maxEms="8"
+                        android:maxLength="10"
+                        android:minEms="5"
+                        android:singleLine="true"
+                        android:textColor="#000000" >
+
+                        <requestFocus
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </EditText>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow_physician2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" >
+
+                    <TextView
+                        android:id="@+id/dtextMidname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MidName"
+                        android:textColor="#e46ca0" />
+
+                    <EditText
+                        android:id="@+id/pmdmn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="1"
+                        android:lines="1"
+                        android:maxEms="8"
+                        android:maxLength="10"
+                        android:minEms="5"
+                        android:singleLine="true"
+                        android:textColor="#000000" >
+
+                        <requestFocus
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </EditText>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/dtableRow_lastname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" >
+
+                    <TextView
+                        android:id="@+id/dtextlastname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="LastName"
+                        android:textColor="#e46ca0" />
+
+                    <EditText
+                        android:id="@+id/pmdln"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="1"
+                        android:lines="1"
+                        android:maxEms="8"
+                        android:maxLength="10"
+                        android:minEms="5"
+                        android:singleLine="true"
+                        android:textColor="#000000" >
+
+                        <requestFocus
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </EditText>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/dtableRow_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" >
+
+                    <TextView
+                        android:id="@+id/dTextView_Phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Phone"
+                        android:textColor="#e46ca0" />
+
+                    <EditText
+                        android:id="@+id/pmdstate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="1"
+                        android:lines="1"
+                        android:maxEms="8"
+                        android:maxLength="2"
+                        android:minEms="5"
+                        android:singleLine="true"
+                        android:text="State"
+                        android:textColor="#000000" />
+
+                    <EditText
+                        android:id="@+id/pmdarea"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="1"
+                        android:lines="1"
+                        android:maxEms="8"
+                        android:maxLength="2"
+                        android:minEms="5"
+                        android:singleLine="true"
+                        android:text="Area"
+                        android:textColor="#000000" />
+
+                    <EditText
+                        android:id="@+id/pmdfirst"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="1"
+                        android:lines="1"
+                        android:maxEms="8"
+                        android:maxLength="4"
+                        android:minEms="5"
+                        android:singleLine="true"
+                        android:text="Fst"
+                        android:textColor="#000000" />
+
+                    <EditText
+                        android:id="@+id/pmdlast"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="1"
+                        android:lines="1"
+                        android:maxEms="8"
+                        android:maxLength="4"
+                        android:minEms="5"
+                        android:singleLine="true"
+                        android:text="lst"
+                        android:textColor="#000000" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/dtableRow_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" >
+
+                    <TextView
+                        android:id="@+id/dTextemail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email"
+                        android:textColor="#e46ca0" />
+
+                    <EditText
+                        android:id="@+id/pmdemail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:textColor="#000000" />
+
+                    <TextView
+                        android:id="@+id/dsection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+
+                    <EditText
+                        android:id="@+id/pmdlstemail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="1"
+                        android:lines="1"
+                        android:maxEms="8"
+                        android:minEms="5"
+                        android:singleLine="true"
+                        android:textColor="#000000" />
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/configuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:text="Configuration"
+                android:textColor="#ffffff"
+                android:textSize="20dp" />
+
+            <TableLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#dbeef4"
+                android:gravity="center" >
+
+                <TableRow
+                    android:id="@+id/recordtable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" >
+
+                    <TextView
+                        android:id="@+id/recordtime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Record Time"
+                        android:textColor="#e46ca0" />
+
+                    <EditText
+                        android:id="@+id/pmsec"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="1"
+                        android:lines="1"
+                        android:maxEms="8"
+                        android:maxLength="10"
+                        android:minEms="5"
+                        android:singleLine="true"
+                        android:textColor="#000000" >
+
+                        <requestFocus
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </EditText>
+
+                    <TextView
+                        android:id="@+id/sec"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sec"
+                        android:textColor="#000000" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/symtable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" >
+
+                    <TextView
+                        android:id="@+id/Sympathetic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sympathetic"
+                        android:textColor="#e46ca0" />
+
+                    <EditText
+                        android:id="@+id/pmsym_min"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="1"
+                        android:lines="1"
+                        android:maxEms="8"
+                        android:maxLength="10"
+                        android:minEms="5"
+                        android:singleLine="true"
+                        android:textColor="#000000" >
+
+                        <requestFocus
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </EditText>
+
+                    <TextView
+                        android:id="@+id/sym_section"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="~"
+                        android:textColor="#000000" />
+
+                    <EditText
+                        android:id="@+id/pmsym_max"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="1"
+                        android:lines="1"
+                        android:maxEms="8"
+                        android:maxLength="10"
+                        android:minEms="5"
+                        android:singleLine="true"
+                        android:textColor="#000000" >
+
+                        <requestFocus
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </EditText>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/paratable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" >
+
+                    <TextView
+                        android:id="@+id/Parasympathetic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Parasympathetic"
+                        android:textColor="#e46ca0" />
+
+                    <EditText
+                        android:id="@+id/pmpara_min"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="1"
+                        android:lines="1"
+                        android:maxEms="8"
+                        android:maxLength="10"
+                        android:minEms="5"
+                        android:singleLine="true"
+                        android:textColor="#000000" >
+
+                        <requestFocus
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </EditText>
+
+                    <TextView
+                        android:id="@+id/para_section"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="~"
+                        android:textColor="#000000" />
+
+                    <EditText
+                        android:id="@+id/pmpara_max"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="1"
+                        android:lines="1"
+                        android:maxEms="8"
+                        android:maxLength="10"
+                        android:minEms="5"
+                        android:singleLine="true"
+                        android:textColor="#000000" >
+
+                        <requestFocus
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </EditText>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/hrtable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" >
+
+                    <TextView
+                        android:id="@+id/hrrange"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="HR range"
+                        android:textColor="#e46ca0" />
+
+                    <EditText
+                        android:id="@+id/hr_min"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="1"
+                        android:lines="1"
+                        android:maxEms="8"
+                        android:maxLength="10"
+                        android:minEms="5"
+                        android:singleLine="true"
+                        android:textColor="#000000" >
+
+                        <requestFocus
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </EditText>
+
+                    <TextView
+                        android:id="@+id/hr_section"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="~"
+                        android:textColor="#000000" />
+
+                    <EditText
+                        android:id="@+id/hr_max"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="1"
+                        android:lines="1"
+                        android:maxEms="8"
+                        android:maxLength="10"
+                        android:minEms="5"
+                        android:singleLine="true"
+                        android:textColor="#000000" >
+
+                        <requestFocus
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </EditText>
+                </TableRow>
+
+                <!-- dddd -->
+
+                <TableRow
+                    android:id="@+id/email_send"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email send"
+                        android:textColor="#e46ca0" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/radiosend">
+
+                        <RadioButton
+                            android:id="@+id/radioBtn_yes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Yes"
+                            android:textColor="#000000" />
+
+                        <RadioButton
+                            android:id="@+id/radioBtn_No"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:text="No"
+                            android:textColor="#000000" />
+                    </RadioGroup>
+                </TableRow>
+            </TableLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center" >
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/pmbtn1"
+                    android:layout_width="90dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/blue_rec_style"
+                    android:text="Save"
+                    android:textColor="@color/white"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/pmbtn3"
+                    android:layout_width="90dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/blue_rec_style"
+                    android:text="Reset"
+                    android:textColor="@color/white"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/pmbtn2"
+                    android:layout_width="90dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/blue_rec_style"
+                    android:text="Cancel"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -13,7 +13,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Main Menu"
+        android:text="RSA"
         android:textColor="#ffffff"
         android:textSize="40dp" />
 
@@ -41,8 +41,16 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:background="@color/fst_menu"
-        android:textColor="#FFFFFF"
- />
+        android:textColor="#FFFFFF" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_profile"
+        android:text="Profile"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@color/fst_menu"
+        android:textColor="#FFFFFF" />
 
 
 </LinearLayout>

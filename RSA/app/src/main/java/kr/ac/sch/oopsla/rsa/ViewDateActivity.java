@@ -11,7 +11,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
 import java.text.SimpleDateFormat;
@@ -26,7 +25,7 @@ import kr.ac.sch.oopsla.rsa.androidqa.WheelView;
 import kr.ac.sch.oopsla.rsa.process.calendarProcess;
 import ru.slybeaver.slycalendarview.SlyCalendarDialog;
 
-public class ViewSelectActivity extends AppCompatActivity implements SlyCalendarDialog.Callback {
+public class ViewDateActivity extends AppCompatActivity implements SlyCalendarDialog.Callback {
 
     Context ctx;
     boolean wheelScrolled ;
@@ -44,10 +43,10 @@ public class ViewSelectActivity extends AppCompatActivity implements SlyCalendar
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_select);
+        setContentView(R.layout.activity_view_date);
 
         // wheel 부분 설정
-        ctx = ViewSelectActivity.this;
+        ctx = ViewDateActivity.this;
         initWheelDay(R.id.lmcp2);
         initWheelNum(R.id.lmcp1);
 
@@ -221,7 +220,7 @@ public class ViewSelectActivity extends AppCompatActivity implements SlyCalendar
         if(changeDay==null||today==null){
             Toast.makeText(ctx,"Please Select Date/Period!",Toast.LENGTH_LONG).show();
         }else {
-            Intent intent1 = new Intent(ViewSelectActivity.this, ViewListActivity.class);
+            Intent intent1 = new Intent(ViewDateActivity.this, ViewListActivity.class);
             intent1.putExtra("startDay", changeDay);
             intent1.putExtra("endDay", today);
             startActivity(intent1);

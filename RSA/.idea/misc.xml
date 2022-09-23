@@ -9,15 +9,19 @@
         <entry key="..\:/RSA/RSA/app/src/main/res/drawable/background_circle_white.xml" value="0.2415" />
         <entry key="..\:/RSA/RSA/app/src/main/res/drawable/custom_drawable_progressbar.xml" value="0.233" />
         <entry key="..\:/RSA/RSA/app/src/main/res/drawable/custom_progressbar.xml" value="0.265" />
+        <entry key="..\:/RSA/RSA/app/src/main/res/layout/acitivity_view_select_type.xml" value="0.4234375" />
         <entry key="..\:/RSA/RSA/app/src/main/res/layout/activity_loading_show.xml" value="0.4234375" />
         <entry key="..\:/RSA/RSA/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/RSA/RSA/app/src/main/res/layout/activity_measure.xml" value="0.4244791666666667" />
         <entry key="..\:/RSA/RSA/app/src/main/res/layout/activity_measurement_rsa.xml" value="0.22552083333333334" />
+        <entry key="..\:/RSA/RSA/app/src/main/res/layout/activity_profile.xml" value="0.34843950406156476" />
         <entry key="..\:/RSA/RSA/app/src/main/res/layout/activity_result.xml" value="0.4234375" />
         <entry key="..\:/RSA/RSA/app/src/main/res/layout/activity_view.xml" value="0.4234375" />
         <entry key="..\:/RSA/RSA/app/src/main/res/layout/activity_view_list.xml" value="0.4244791666666667" />
         <entry key="..\:/RSA/RSA/app/src/main/res/layout/activity_view_result.xml" value="0.33" />
         <entry key="..\:/RSA/RSA/app/src/main/res/layout/activity_view_select.xml" value="0.4244791666666667" />
+        <entry key="..\:/RSA/RSA/app/src/main/res/layout/activity_view_select_type.xml" value="0.4244791666666667" />
+        <entry key="..\:/RSA/RSA/app/src/main/res/layout/activity_view_trend.xml" value="0.33" />
         <entry key="..\:/RSA/RSA/app/src/main/res/layout/item.xml" value="0.4234375" />
         <entry key="..\:/RSA/RSA/app/src/main/res/layout/item_view_list.xml" value="0.4244791666666667" />
         <entry key="..\:/RSA/RSA/app/src/main/res/layout/l53.xml" value="0.4244791666666667" />

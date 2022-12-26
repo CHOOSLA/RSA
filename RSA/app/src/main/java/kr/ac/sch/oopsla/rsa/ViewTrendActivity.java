@@ -101,8 +101,8 @@ public class ViewTrendActivity extends Activity{
 
         initMax();
 
-        for (int i = 0; i < mArrayList.size(); i++) {
-            seriesData1.add(new CustomDataEntry(mArrayList.get(i),AvgHRs.get(i)));
+        for (int i = 0; i < mArrayDateList.size(); i++) {
+            seriesData1.add(new CustomDataEntry(mArrayDateList.get(i),AvgHRs.get(i)));
         }
         Set set = Set.instantiate();
         set.data(seriesData1);
@@ -151,8 +151,8 @@ public class ViewTrendActivity extends Activity{
 
         List<DataEntry> seriesData2 = new ArrayList<>();
 
-        for (int i = 0; i < mArrayList.size(); i++) {
-            seriesData2.add(new CustomDataEntry(mArrayList.get(i),RSAs.get(i)));
+        for (int i = 0; i < mArrayDateList.size(); i++) {
+            seriesData2.add(new CustomDataEntry(mArrayDateList.get(i),RSAs.get(i)));
         }
 
         Set set2 = Set.instantiate();

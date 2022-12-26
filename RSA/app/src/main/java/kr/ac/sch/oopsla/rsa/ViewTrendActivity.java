@@ -75,8 +75,14 @@ public class ViewTrendActivity extends Activity{
         backBtn = (Button) findViewById(R.id.button_view_trend_back);
         backBtn.setOnClickListener((v)->{finish();});
 
-        // HR 차트 설정
+        /*
+        * 차트 형성을 위해 AnyChart 라는 모듈을 씀
+        * 차트를 조작하기 위해서는
+        * https://docs.anychart.com/Basic_Charts/Line_Chart
+        * 위의 링크에서 확인하여 변경하는 것을 추천
+        * */
 
+        // HR 차트 설정
         AnyChartView lineChart1 = (AnyChartView) findViewById(R.id.HR_chart_view_trend_chart);
         APIlib.getInstance().setActiveAnyChartView(lineChart1);
 
@@ -91,10 +97,11 @@ public class ViewTrendActivity extends Activity{
         cartesian1.yScale().ticks().interval(5);
         cartesian1.crosshair().enabled(true);
         cartesian1.crosshair()
-                .yLabel(true)
+                .yLabel(false)
                 // TODO ystroke
                 .yStroke((Stroke) null, null, null, (String) null, (String) null);
         cartesian1.tooltip().positionMode(TooltipPositionMode.POINT);
+        cartesian1.tooltip().format("{%value}");
         cartesian1.title("HR");
 
         List<DataEntry> seriesData1 = new ArrayList<>();
@@ -143,10 +150,11 @@ public class ViewTrendActivity extends Activity{
         cartesian2.yScale().ticks().interval(1);
         cartesian2.crosshair().enabled(true);
         cartesian2.crosshair()
-                .yLabel(true)
+                .yLabel(false)
                 // TODO ystroke
                 .yStroke((Stroke) null, null, null, (String) null, (String) null);
         cartesian2.tooltip().positionMode(TooltipPositionMode.POINT);
+        cartesian2.tooltip().format("{%value}");
         cartesian2.title("RSA");
 
         List<DataEntry> seriesData2 = new ArrayList<>();
@@ -186,6 +194,8 @@ public class ViewTrendActivity extends Activity{
         }
     }
 
+    // 2022.12.26
+    // 체크한 목록별로 차트가 형성되어있지않음 [ 수정 필요 ]
     private void initMax() {
         int avghr, age, right, left;
         String time1, time2, name;

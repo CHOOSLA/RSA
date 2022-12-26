@@ -80,6 +80,7 @@ public class ViewDateActivity extends AppCompatActivity implements SlyCalendarDi
         }, true);
 
         today = new SimpleDateFormat(getString(R.string.dateFormat), Locale.getDefault()).format(new Date().getTime());
+        changeDay = calendarProcess.subDay(today,1,0);
 
         mBtnBack = findViewById(R.id.button_result_view_back);
         mBtnNext = findViewById(R.id.button_result_view_next);

@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
+import com.anychart.APIlib;
 import com.anychart.AnyChart;
 import com.anychart.AnyChartView;
 import com.anychart.chart.common.dataentry.DataEntry;
@@ -33,7 +34,7 @@ public class ViewTrendActivity extends Activity{
 
     String startDay,endDay;
     ArrayList<String> mArrayList = new ArrayList<String>();
-    AnyChartView lineChart;
+   // AnyChartView lineChart;
     TextView trendTv;
 
     private DBtype db = null;
@@ -68,45 +69,47 @@ public class ViewTrendActivity extends Activity{
         startDay = intent.getStringExtra("startDay");
         mArrayList = intent.getStringArrayListExtra("Date");
 
-
-        lineChart = (AnyChartView) findViewById(R.id.chart_view_trend_chart);
+        trendTv = (TextView) findViewById(R.id.text_view_trend_period);
+        trendTv.setText(startDay + " ~ " + endDay);
 
         backBtn = (Button) findViewById(R.id.button_view_trend_back);
         backBtn.setOnClickListener((v)->{finish();});
 
-        Cartesian cartesian = AnyChart.line();
+        // HR 차트 설정
 
-        cartesian.animation(true);
-        cartesian.padding(10d, 20d, 5d, 20d);
-        cartesian.xMinorGrid(10);
-        cartesian.yMinorGrid(10);
-        cartesian.yScale().softMaximum(90);
-        cartesian.yScale().softMinimum(12);
-        cartesian.yScale().ticks().interval(5);
-        cartesian.crosshair().enabled(true);
-        cartesian.crosshair()
+        AnyChartView lineChart1 = (AnyChartView) findViewById(R.id.HR_chart_view_trend_chart);
+        APIlib.getInstance().setActiveAnyChartView(lineChart1);
+
+        Cartesian cartesian1 = AnyChart.line();
+
+        cartesian1.animation(true);
+        cartesian1.padding(0d, 0d, 0d, 0d);
+        cartesian1.xMinorGrid(10);
+        cartesian1.yMinorGrid(10);
+        cartesian1.yScale().softMaximum(110);
+        cartesian1.yScale().softMinimum(50);
+        cartesian1.yScale().ticks().interval(5);
+        cartesian1.crosshair().enabled(true);
+        cartesian1.crosshair()
                 .yLabel(true)
                 // TODO ystroke
                 .yStroke((Stroke) null, null, null, (String) null, (String) null);
-        cartesian.tooltip().positionMode(TooltipPositionMode.POINT);
-        cartesian.title("Trend of RSAs And HRs");
+        cartesian1.tooltip().positionMode(TooltipPositionMode.POINT);
+        cartesian1.title("HR");
 
-        List<DataEntry> seriesData = new ArrayList<>();
-
-        trendTv = (TextView) findViewById(R.id.text_view_trend_period);
-        trendTv.setText(startDay + " ~ " + endDay);
+        List<DataEntry> seriesData1 = new ArrayList<>();
 
         initMax();
 
         for (int i = 0; i < mArrayList.size(); i++) {
-            seriesData.add(new CustomDataEntry(mArrayList.get(i),RSAs.get(i),AvgHRs.get(i)));
+            seriesData1.add(new CustomDataEntry(mArrayList.get(i),AvgHRs.get(i)));
         }
         Set set = Set.instantiate();
-        set.data(seriesData);
+        set.data(seriesData1);
         Mapping seriesMapping = set.mapAs("{ x: 'x', value: 'value' }");
-        Mapping series2Mapping = set.mapAs("{ x: 'x', value: 'value2' }");
-        Line series = cartesian.line(seriesMapping);
-        series.name("RSA");
+
+        Line series = cartesian1.line(seriesMapping);
+        series.name("HR");
         series.hovered().markers()
                 .type(MarkerType.CIRCLE)
                 .size(4d);
@@ -115,11 +118,49 @@ public class ViewTrendActivity extends Activity{
                 .anchor(Anchor.LEFT_CENTER)
                 .offsetX(5d)
                 .offsetY(5d);
-        series.color("blue");
+        series.color("red");
 
-        Line series2 = cartesian.line(series2Mapping);
-        series2.name("AvgHR");
-        series2.hovered().markers().enabled(true);
+
+//        cartesian1.legend().enabled(true);
+//        cartesian1.legend().fontSize(13d);
+//        cartesian1.legend().padding(0d, 0d, 10d, 0d);
+
+        lineChart1.setChart(cartesian1);
+
+        // RSA 차트 설정
+
+        AnyChartView lineChart2 = (AnyChartView) findViewById(R.id.RSA_chart_view_trend_chart);
+        APIlib.getInstance().setActiveAnyChartView(lineChart2);
+
+        Cartesian cartesian2 = AnyChart.line();
+
+        cartesian2.animation(true);
+        cartesian2.padding(0d, 0d, 0d, 0d);
+        cartesian2.xMinorGrid(10);
+        cartesian2.yMinorGrid(10);
+        cartesian2.yScale().softMaximum(25);
+        cartesian2.yScale().softMinimum(0);
+        cartesian2.yScale().ticks().interval(1);
+        cartesian2.crosshair().enabled(true);
+        cartesian2.crosshair()
+                .yLabel(true)
+                // TODO ystroke
+                .yStroke((Stroke) null, null, null, (String) null, (String) null);
+        cartesian2.tooltip().positionMode(TooltipPositionMode.POINT);
+        cartesian2.title("RSA");
+
+        List<DataEntry> seriesData2 = new ArrayList<>();
+
+        for (int i = 0; i < mArrayList.size(); i++) {
+            seriesData2.add(new CustomDataEntry(mArrayList.get(i),RSAs.get(i)));
+        }
+
+        Set set2 = Set.instantiate();
+        set2.data(seriesData2);
+        Mapping seriesMapping2 = set2.mapAs("{ x: 'x', value: 'value' }");
+
+        Line series2 = cartesian2.line(seriesMapping2);
+        series2.name("RSA");
         series2.hovered().markers()
                 .type(MarkerType.CIRCLE)
                 .size(4d);
@@ -128,22 +169,20 @@ public class ViewTrendActivity extends Activity{
                 .anchor(Anchor.LEFT_CENTER)
                 .offsetX(5d)
                 .offsetY(5d);
-        series2.color("red");
+        series2.color("blue");
 
 
-        cartesian.legend().enabled(true);
-        cartesian.legend().fontSize(13d);
-        cartesian.legend().padding(0d, 0d, 10d, 0d);
+//        cartesian2.legend().enabled(true);
+//        cartesian2.legend().fontSize(13d);
+//        cartesian2.legend().padding(0d, 0d, 10d, 0d);
 
-        lineChart.setChart(cartesian);
+        lineChart2.setChart(cartesian2);
     }
 
     private class CustomDataEntry extends ValueDataEntry{
 
-        public CustomDataEntry(String x, Number value, Number value2) {
+        public CustomDataEntry(String x, Number value) {
             super(x, value);
-            setValue("value2",value2);
-
         }
     }
 

@@ -9,14 +9,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="0.8"
         android:gravity="center"
         android:orientation="vertical">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="View &amp; Send"
+            android:text="Trend View"
             android:textColor="@color/white"
             android:textSize="30dp" />
 
@@ -31,14 +31,35 @@
             android:layout_marginTop="30dp"/>
 
     </LinearLayout>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.05"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="4.5"
+        android:layout_weight="2"
         android:gravity="center">
         <com.anychart.AnyChartView
-            android:id="@+id/chart_view_trend_chart"
+            android:id="@+id/HR_chart_view_trend_chart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="center">
+        <com.anychart.AnyChartView
+            android:id="@+id/RSA_chart_view_trend_chart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
@@ -49,7 +70,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="0.6"
         android:orientation="horizontal"
         android:gravity="center">
         <androidx.appcompat.widget.AppCompatButton

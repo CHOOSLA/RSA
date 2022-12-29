@@ -995,7 +995,7 @@ public class DataSet {
 		// want to look at "sec" seconds of data
 		double data_win = 30 * sec;
 
-		int frames = (int) this.getFrameRate((int) data_win);
+		int frames = (int) this.getFrameRate((int) data_win); // fps: sampling rate
 		if (frames < 15) {
 			frames = 15;
 		}
@@ -1003,13 +1003,13 @@ public class DataSet {
 		double[] data_set;
 		if (set.size() < data_win) {
 			data_set = getValueArray();
-		} else {
+		} else { // 최근 4초간의 rgb 데이터 가져옴
 			data_set = getValueArray((int) (set.size() - data_win), (int) data_win);
 		}
 
 		Log.e(TAG, "samplerate"+frames);
 		
-		int[] peaks = Peak_Detector.Peak_Detection(data_set, frames);
+		int[] peaks = Peak_Detector.Peak_Detection(data_set, frames); //
 		// int[] peaks = Peak_Detector.Peak_Detection(data_set, 30);
 
 		if (peaks.length < 2) {
@@ -1035,7 +1035,7 @@ public class DataSet {
 		return HR;
 	}
 
-	public double getFrameRate() {
+	public double getFrameRate() { // find a sampling rate
 		
 		double sum = 0;
 		
@@ -1046,9 +1046,9 @@ public class DataSet {
 
 	public double getFrameRate(int points) {
 		
-		if (set.size() <= points + 1) {
+		if (set.size() <= points + 1) { 	// 4초 이전이면
 			return getFrameRate();
-		} else {
+		} else {							// 4초 이후이면
 			double sum = 0;
 			for (int i = set.size() - points + 1; i < set.size(); i++)
 				sum += set.get(i).getTime() - set.get(i - 1).getTime();

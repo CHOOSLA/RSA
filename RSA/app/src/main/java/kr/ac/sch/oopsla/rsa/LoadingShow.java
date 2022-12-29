@@ -73,8 +73,8 @@ public class LoadingShow extends Activity implements OnClickListener {
         //             작성해야함
         //
 
-        //////////////////////////////// HRARR filter!!!!!!!
-        filteredHRs = filterHR(HRarr);
+        //////////////////////////////// HRARR filter: HR 그래프에서 첨도를 제거하고 매끄럽게 함
+        filteredHRs = filterHR(HRarr); // HRarr은 Measure Activity에서 전달된 값
         filteredHRs_2 = filterHR(filteredHRs);
 
         textFile.TextFileInit(textFilePath, "filtered_HR_arr");
@@ -88,18 +88,18 @@ public class LoadingShow extends Activity implements OnClickListener {
         ArrayList<Double> filtered_list = new ArrayList<Double>();
         double[] removedArr;
 
+        // 비정상 심박수는 삭제
         for (int i = 0; i < filteredHRs_2.length; i++) {
             if (filteredHRs_2[i] <= 55 || filteredHRs_2[i] >= 120) {
-                //필터링된 HRarr(평균RGB값)이 55이하이거나 120이상일때
-                if (i < LEFT_LENGTH) {
-                    //5초 미만이면 여기
+                //필터링된 HRarr이 55이하이거나 120이상일때
+                if (i < LEFT_LENGTH) { //심 호흡 이전 구간
+                    //26.5초(=53*0.5) 미만이면 여기
                     left_count = left_count + 1;
-                } else if (i < LEFT_LENGTH + DEEP_LENGTH + 1) {
-                    //126초 미만이면 여기
+                } else if (i < LEFT_LENGTH + DEEP_LENGTH + 1) { // 심호흡 구간
+                    //86초(=26.5+117*0.5+1) 미만이면 여기
                     deep_count = deep_count + 1;
                 }
-                //나머진 여기
-                filteredHRs_2[i] = 0;
+                filteredHRs_2[i] = 0; // 삭제
             }
         }
 
@@ -148,7 +148,7 @@ public class LoadingShow extends Activity implements OnClickListener {
         rsa = 0;
 
 //      result = getpeaks(dbHr, intervalCal);
-        result = getPeaksByPeakDetection(removedArr, 30);
+        result = getPeaksByPeakDetection(removedArr, 30); // detect Min, Max
 
         up = result[0];
         dw = result[1];
@@ -159,7 +159,7 @@ public class LoadingShow extends Activity implements OnClickListener {
         for (int i = 0; i < up.length; i++) {
 //    	  up[i] = (int) (up[i]+leftHr.length);
 //    	  up_fin[i] = (int) up[i];
-            if (up[i] >= LEFT_LENGTH - left_count && up[i] <= LEFT_LENGTH + DEEP_LENGTH - left_count - deep_count) {
+            if (up[i] >= LEFT_LENGTH - left_count && up[i] <= LEFT_LENGTH + DEEP_LENGTH - left_count - deep_count) { // 심호흡 구간이면
                 upFin.add((int) up[i]);
             }
         }
@@ -167,7 +167,7 @@ public class LoadingShow extends Activity implements OnClickListener {
         for (int i = 0; i < dw.length; i++) {
 //    	  dw[i] = (int) (dw[i]+leftHr.length);
 //    	  dw_fin[i] = (int) dw[i];
-            if (dw[i] >= LEFT_LENGTH - left_count && dw[i] <= LEFT_LENGTH + DEEP_LENGTH - left_count - deep_count) {
+            if (dw[i] >= LEFT_LENGTH - left_count && dw[i] <= LEFT_LENGTH + DEEP_LENGTH - left_count - deep_count) {// 심호흡 구간이면
                 dwFin.add((int) dw[i]);
             }
         }
@@ -194,7 +194,7 @@ public class LoadingShow extends Activity implements OnClickListener {
         // up_fin 이나 dw_fin 배열의 크기가 0인 경우를 고려해야 한다.
         try {
             double[] peak_temp;
-            if (up_fin[0] > dw_fin[0]) {
+            if (up_fin[0] > dw_fin[0]) { // 최좌측에서 min시간이 max 시간보다 앞서면, 첫번째 min 삭제
                 peak_temp = new double[dw_fin.length - 1];
                 for (int i = 0; i < peak_temp.length; i++) {
                     peak_temp[i] = dw_fin[i + 1];
@@ -202,7 +202,7 @@ public class LoadingShow extends Activity implements OnClickListener {
                 dw_fin = peak_temp;
             }
 
-            if (up_fin[up_fin.length - 1] > dw_fin[dw_fin.length - 1]) {
+            if (up_fin[up_fin.length - 1] > dw_fin[dw_fin.length - 1]) { // 최우측에서 max시간이 min 시간보다 뒤에 있으면, 마지막 max 삭제
                 peak_temp = new double[up_fin.length - 1];
                 for (int i = 0; i < peak_temp.length; i++) {
                     peak_temp[i] = up_fin[i];
@@ -478,7 +478,7 @@ public class LoadingShow extends Activity implements OnClickListener {
         return up_fin;
     }
 
-    public static double[] filterHR(double[] arr) {
+    public static double[] filterHR(double[] arr) { // HR 그래프상에서 첨도 부분 제거
         double[] HRarr = new double[arr.length];
         for (int i = 0; i < arr.length; i++) {
             HRarr[i] = arr[i];
@@ -575,7 +575,7 @@ public class LoadingShow extends Activity implements OnClickListener {
             avg += arr[i];
         }
         avg = avg / arr.length;
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < arr.length; i++) { // reverse graphs
             arrReverse[i] = avg + (avg - arr[i]);
         }
 

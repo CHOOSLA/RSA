@@ -183,7 +183,7 @@ class CamView extends SurfaceView implements SurfaceHolder.Callback, Camera.Prev
             mCamera.setParameters(params);
             mCamera.setPreviewDisplay(mHolder);
             mCamera.setPreviewCallback(this);
-            mCamera.startPreview();
+            mCamera.startPreview(); // 카메라 동작 개시
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -283,7 +283,7 @@ class CamView extends SurfaceView implements SurfaceHolder.Callback, Camera.Prev
     }
     // Camera.PreviewCallback stuff:
     // ------------------------------------------------------
-    public void onPreviewFrame(byte[] data, Camera cam) {
+    public void onPreviewFrame(byte[] data, Camera cam) { // 카메라 동작시 실행
         frameHeight = mCamera.getParameters().getPreviewSize().height;
         frameWidth = mCamera.getParameters().getPreviewSize().width;
         int rgb[] = new int[frameWidth * frameHeight];
@@ -310,14 +310,14 @@ class CamView extends SurfaceView implements SurfaceHolder.Callback, Camera.Prev
                 stopButton.setEnabled(true);
                 isMessageReady = true;
             }
-
+            // beforeTime = 10000 으로 초기화 필요함
             // Every 2 seconds.
             if (interval_time >= beforeTime) {
                 beforeTime += 2000;
 
                 try {
                     if (sync != null)
-                        HR = HRsync.get();
+                        HR = HRsync.get(); // return (int) signals[0].complexHeartRate(4); 반환된 값 가져옴
                     temp = (int) HR;
                     Log.e(TAG, "ppg:" + HR);
                 } catch (InterruptedException e) {
@@ -327,10 +327,10 @@ class CamView extends SurfaceView implements SurfaceHolder.Callback, Camera.Prev
                 }
 
                 sync = new PeakSync();
-                HRsync = sync.execute(signal);
+                HRsync = sync.execute(signal); // background로 실행
 
-                mHeartRate.setHR((int) HR);
-                signal.addHRPoint(HR);
+                mHeartRate.setHR((int) HR); // 측정 뷰에 HR 표시
+                signal.addHRPoint(HR); // HR 저장
             }
         }
     }

@@ -3,7 +3,7 @@ include $(CLEAR_VARS)
 
 # opencv library
 # 이것은 인수인계 받을 때 상황에 맞게 경로 설정을 해야함
-OPENCVROOT:= E:\RSA\RSA\sdk
+OPENCVROOT:= C:\Users\user\RSA\RSA\sdk
 OPENCV_CAMERA_MODULES:=on
 OPENCV_INSTALL_MODULES:=on
 OPENCV_LIB_TYPE:=SHARED
